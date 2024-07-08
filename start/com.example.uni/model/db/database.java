@@ -16,7 +16,7 @@ public class database {
         teacherDb.add(teacher);
         System.out.println(teacher + " ---< teacher");
         Student s1 = new Student(1,1,"Peta","Pipeta");
-        Student s2 = new  Student(2,1,"Ivan","Ivanich");
+        Student s2 = new  Student(2,1,"Pit","Pitonich");
         studentDb.add(s2);
         studentDb.add(s1); 
     }

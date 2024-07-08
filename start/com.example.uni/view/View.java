@@ -85,7 +85,6 @@ public class View {
             idGroup = scanner.nextInt();
         }
         System.out.println(teacherController.getIdTeacher(idGroup));
-        System.out.println(idGroup + " ------< idGroup create Teacher");
         Teacher teacher = teacherController.createTeacher(idGroup, name, lastName);
         System.out.println(teacher);
         return teacher;
@@ -104,13 +103,14 @@ public class View {
         return teacherController.getAllTeacher();
     };
 
-    private StudentGroup createStudentGroup() {
+    private void createStudentGroup() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your Group Id: ");
         int idGroup = scanner.nextInt();
         System.out.println(
                 groupController.createStudentGroup(teacherController.getTeacher(idGroup), controller.getAllStudent()));
-        return null;
+        // StudentGroup sd = new StudentGroup(getTeacher(), getAllStudent());
+        // return null;
     }
 
 }

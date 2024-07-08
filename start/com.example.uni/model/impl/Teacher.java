@@ -13,8 +13,4 @@ public class Teacher extends User {
         super(id, name, lastName);
 
     }
-
-    // public int getId() {
-    //     return id;
-    // }
 }

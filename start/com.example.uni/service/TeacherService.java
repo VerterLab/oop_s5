@@ -8,14 +8,7 @@ import model.impl.Teacher;
 public class TeacherService {
 
     public Teacher createTeacher(int groupId, String name, String lastName) {
-        Teacher teacher = new Teacher(groupId, name, lastName);;
-    //     if (database.teacherDb.isEmpty()) {
-    //         teacher = new Teacher(groupId, name, lastName);
-    //     } else if(database.teacherDb.get(groupId) == null){
-    //         teachId = database.teacherDb.size() + 1;
-    //     }
-        
-    //    teacher = new Teacher(groupId, name, lastName);
+        Teacher teacher = new Teacher(groupId, name, lastName);
         database.teacherDb.add(teacher);
         return teacher;
     }
@@ -42,10 +35,6 @@ public class TeacherService {
 
     public List<Teacher> getAllTeacher(){
         return database.teacherDb;
-    }
-// ---------------------------------------------------
-    public void addGroupId(int groupId) {               
-        // groups.add(groupId);
     }
 
 }
