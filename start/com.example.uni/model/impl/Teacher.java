@@ -13,8 +13,8 @@ public class Teacher extends User {
         super(id, name, lastName);
 
     }
-    public void addGroupId(int groupId){
-        groups.add(groupId);
-    }
-    
+
+    // public int getId() {
+    //     return id;
+    // }
 }

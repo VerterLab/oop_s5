@@ -14,7 +14,6 @@ public class StudentService {
         } else {
             id = database.studentDb.size() + 1;
         }
-        System.out.println(id + " -- id");
         Student student = new Student(id, groupId, name, lastName);
         database.studentDb.add(student);
         return student;

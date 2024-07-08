@@ -16,7 +16,7 @@ public class TeacherService {
     //     }
         
     //    teacher = new Teacher(groupId, name, lastName);
-    //     database.teacherDb.add(teacher);
+        database.teacherDb.add(teacher);
         return teacher;
     }
 
@@ -31,8 +31,21 @@ public class TeacherService {
         return teacher;
     }
 
+    public boolean getIdTeacher(int groupId){
+        for (Teacher df : database.teacherDb ) {
+            if (groupId==df.getId()){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public List<Teacher> getAllTeacher(){
         return database.teacherDb;
+    }
+// ---------------------------------------------------
+    public void addGroupId(int groupId) {               
+        // groups.add(groupId);
     }
 
 }

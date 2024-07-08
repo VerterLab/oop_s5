@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import model.impl.Teacher;
 import service.TeacherService;
 
@@ -7,10 +9,10 @@ public class TeacherController {
 
     private TeacherService serviceTeach = new TeacherService();
 
-    public Teacher createTeacher(String name, String lastName) {
-        int id = 0;
+    public Teacher createTeacher(int idGroup, String name, String lastName) {
+        // int id = 0;
 
-        return serviceTeach.createTeacher(id, name, lastName);
+        return serviceTeach.createTeacher(idGroup, name, lastName);
     }
 
     public Teacher getTeacher(int groupId) {
@@ -21,6 +23,15 @@ public class TeacherController {
             System.out.println(e.getMessage());
         }
         return teacher;
+    }
+    public boolean getIdTeacher(int groupId){
+
+        return serviceTeach.getIdTeacher(groupId);
+
+    }
+
+    public List<Teacher> getAllTeacher(){
+        return serviceTeach.getAllTeacher();
     }
 
 }

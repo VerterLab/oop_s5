@@ -12,7 +12,7 @@ public class database {
 
     public static void fillDb() {
         Teacher teacher = new Teacher(1, "Ivan", "Ivanich");
-        teacher.addGroupId(1);
+        // teacher.addGroupId(1);
         teacherDb.add(teacher);
         System.out.println(teacher + " ---< teacher");
         Student s1 = new Student(1,1,"Peta","Pipeta");

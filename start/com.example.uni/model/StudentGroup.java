@@ -3,19 +3,25 @@ package model;
 import java.util.List;
 
 import model.impl.Student;
+import model.impl.Teacher;
 
 public class StudentGroup {
-    int teachId;
+    Teacher teacher;
     List<Student> students;
 
-    StudentGroup(int teachId, List<Student> students) {
-        this.teachId = teachId;
+    public StudentGroup(Teacher teacher, List<Student> students) {
+        this.teacher = teacher;
         this.students = students;
     }
 
+    // @Override
+    // public String toString() {
+    //     return ("id =%s,"  + teacher);
+    // }
+
     @Override
     public String toString() {
-        return ("id =%s,"  + teachId);
-    }
 
+        return (teacher.name + " " + teacher.lastName + " group N: " + teacher.id + " - " + students.toString());
+    }
 }
