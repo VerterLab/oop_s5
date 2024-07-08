@@ -11,13 +11,14 @@ import model.impl.Teacher;
 public class StudentGroupService {
 
     HashMap<Teacher, List<Student>> studentGrop = new HashMap<>();
-    List<Student> groupStudents = new ArrayList<>();
+    List<Student> groupStudents;
 
     public StudentGroup createStudentGroup(Teacher teacher, List<Student> students) {
+        List<Student> groupStudents = new ArrayList<>();
         for (Student student : students) {
+            // groupStudents = new ArrayList<>();
             if (student.groupId == teacher.getId()) {
                 groupStudents.add(student);
-                // System.out.println(groupStudents);
             }
         }
         StudentGroup sGroup = new StudentGroup(teacher, groupStudents);

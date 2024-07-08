@@ -10,8 +10,6 @@ public class TeacherController {
     private TeacherService serviceTeach = new TeacherService();
 
     public Teacher createTeacher(int idGroup, String name, String lastName) {
-        // int id = 0;
-
         return serviceTeach.createTeacher(idGroup, name, lastName);
     }
 

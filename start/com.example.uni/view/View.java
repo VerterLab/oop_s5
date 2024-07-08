@@ -27,6 +27,7 @@ public class View {
             System.out.println("5- Find teacher by idGroup");
             System.out.println("6- Print all teaches");
             System.out.println("7- Print teacher group");
+            System.out.println("8- Print all group");
             System.out.println("0 - break");
 
             switch (scanner.nextInt()) {
@@ -37,6 +38,7 @@ public class View {
                 case 5 -> getTeacher();
                 case 6 -> getAllTeacher();
                 case 7 -> createStudentGroup();
+                case 8 -> printAllGroup();
                 case 0 -> System.exit(0);
                 default -> System.out.println("Operator dont use");
             }
@@ -60,7 +62,7 @@ public class View {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your Id:");
         int studId = scanner.nextInt();
-        System.out.println(controller.getById(studId));
+        // System.out.println(controller.getById(studId));
         return controller.getById(studId);
 
     };
@@ -84,7 +86,7 @@ public class View {
             System.out.println("ID is buzy. Enter new GroupId: ");
             idGroup = scanner.nextInt();
         }
-        System.out.println(teacherController.getIdTeacher(idGroup));
+        // System.out.println(teacherController.getIdTeacher(idGroup));
         Teacher teacher = teacherController.createTeacher(idGroup, name, lastName);
         System.out.println(teacher);
         return teacher;
@@ -113,4 +115,14 @@ public class View {
         // return null;
     }
 
+    private void printAllGroup() {
+        List<Teacher> tch = teacherController.getAllTeacher();
+        for (Teacher teacher : tch) {
+            // int idGroup = teacher.getId();
+            System.out.println(
+                    groupController.createStudentGroup(teacher,
+                            controller.getAllStudent()));
+            System.out.println();
+        }
+    }
 }
