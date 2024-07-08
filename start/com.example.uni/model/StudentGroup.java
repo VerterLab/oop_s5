@@ -14,11 +14,6 @@ public class StudentGroup {
         this.students = students;
     }
 
-    // @Override
-    // public String toString() {
-    //     return ("id =%s,"  + teacher);
-    // }
-
     @Override
     public String toString() {
 

@@ -62,7 +62,6 @@ public class View {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your Id:");
         int studId = scanner.nextInt();
-        // System.out.println(controller.getById(studId));
         return controller.getById(studId);
 
     };
@@ -79,14 +78,12 @@ public class View {
         String name = scanner.next();
         System.out.println("Enter your lastName: ");
         String lastName = scanner.next();
-        //
         System.out.println("Enter groupId: ");
         int idGroup = scanner.nextInt();
         while (teacherController.getIdTeacher(idGroup)) {
             System.out.println("ID is buzy. Enter new GroupId: ");
             idGroup = scanner.nextInt();
         }
-        // System.out.println(teacherController.getIdTeacher(idGroup));
         Teacher teacher = teacherController.createTeacher(idGroup, name, lastName);
         System.out.println(teacher);
         return teacher;
@@ -111,14 +108,12 @@ public class View {
         int idGroup = scanner.nextInt();
         System.out.println(
                 groupController.createStudentGroup(teacherController.getTeacher(idGroup), controller.getAllStudent()));
-        // StudentGroup sd = new StudentGroup(getTeacher(), getAllStudent());
-        // return null;
+
     }
 
     private void printAllGroup() {
         List<Teacher> tch = teacherController.getAllTeacher();
         for (Teacher teacher : tch) {
-            // int idGroup = teacher.getId();
             System.out.println(
                     groupController.createStudentGroup(teacher,
                             controller.getAllStudent()));

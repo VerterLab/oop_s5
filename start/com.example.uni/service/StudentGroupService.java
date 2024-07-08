@@ -16,7 +16,6 @@ public class StudentGroupService {
     public StudentGroup createStudentGroup(Teacher teacher, List<Student> students) {
         List<Student> groupStudents = new ArrayList<>();
         for (Student student : students) {
-            // groupStudents = new ArrayList<>();
             if (student.groupId == teacher.getId()) {
                 groupStudents.add(student);
             }
